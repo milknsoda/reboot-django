@@ -44,9 +44,9 @@ def edit(request, article_pk):
 
 def update(request, article_pk):
     article = Article.objects.get(pk=article_pk)
-    if article.title != request.GET.get('title') or article.content != request.GET.get('content'):
-        article.title = request.GET.get('title')
-        article.content = request.GET.get('content')
-        article.save()
+    # if article.title != request.GET.get('title') or article.content != request.GET.get('content'): 없어도 가능합니다?
+    article.title = request.GET.get('title')
+    article.content = request.GET.get('content')
+    article.save()
     
     return redirect(f'/articles/{article_pk}')
