@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <h1>안녕!</h1>
-</body>
-</html>
+{% extends 'articles/base.html' %}
+
+{% block body %}
+<div class="container">
+  <pre><h2 class="display-3">게시판(board)</h2></pre>
+</div>
+<div class='container jumbotron bg-light rounded-lg border border-warning'>
+  <h4><a href="new/"  class="text-primary">새로운 글</a></h4>
+  <br>
+  {% for article in articles %}
+  <h3><a class="display-4 text-dark" href="{{ article.pk }}/">{{ article.pk }}. {{ article.title }}</a></h3>
+  <p class="lead">{{ article.created_at }}</p>
+  {% endfor %}
+</div>
+  
+{% endblock %}

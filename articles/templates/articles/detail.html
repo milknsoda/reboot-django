@@ -1,0 +1,16 @@
+{% extends 'articles/base.html' %}
+
+{% block body %}
+<div class="jumbotron jumbotron-fluid container shadow-sm p-3 mb-5 bg-white rounded">
+  <div class="container">
+    <h1 class="display-5">{{ article.title }}</h1>
+    <br>
+    <p class="lead">{{ article.content }}</p>
+    <hr>  
+    <pre><a href="edit/">수정</a>  <a href="delete/">삭제</a>  <a href="/articles/">목록으로</a></pre>
+    <hr>
+    <p>작성일자: {{ article.created_at }}</p>
+    <p>수정일자: {{ article.updated_at }}</p>
+  </div>
+</div>
+{% endblock %}
