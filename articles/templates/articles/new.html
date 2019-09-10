@@ -2,7 +2,8 @@
 
 {% block body %}
 <div class="container">
-  <form action="/articles/create/">
+  <form action="/articles/create/" method="POST">
+    {% csrf_token %}
     <div class="form-group">
       <label for="title"><h4>제목</h4></label>
       <input type="text" name="title" class="form-control" id="title">
@@ -15,7 +16,4 @@
     <a href="/articles/"><button type="button" class="btn btn-dark">취소</button></a>
   </form>
 </div>
-
-
-
 {% endblock %}
