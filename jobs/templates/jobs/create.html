@@ -1,0 +1,7 @@
+{% extends 'jobs/base.html' %}
+{% block body %}
+
+<p><strong>{{ people.name }}</strong> 님은 전생에 <strong>{{ people.job }}</strong> 이었습니다.</p>
+<img src="{{ image_url }}" alt="{{ people.job }}">
+
+{% endblock%}
