@@ -5,6 +5,7 @@
   <div class="container">
     <h1 class="display-5">{{ article.title }}</h1>
     <br>
+    <img src="{{ article.image.url }}" alt="{{ article.image.name }}">
     <p class="lead">{{ article.content }}</p>
     <hr>  
     <pre><a href="edit/">수정</a>  <a href="delete/">삭제</a>  <a href="/articles/">목록으로</a></pre>
