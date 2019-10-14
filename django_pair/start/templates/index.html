@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<style>
+  body {
+    background-image: url("{% static 'sponge.jpg' %}");
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+<h1>HELLO</h1>
+<a href="{% url 'start:new' %}">글 작성</a>
+{% for article in articles %}
+
+<a href="detail/{{ article.pk }}/"><h3>{{ article.pk }}. {{ article.title }}</h3></a>
+<p>{{ article.created_at }}</p>
+{% endfor %}
+{% endblock %}
